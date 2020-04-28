@@ -1,0 +1,54 @@
+.PageNavigatorComponent {
+	display: flex;
+	justify-content: flex-start;
+	align-self: center;
+	margin-left: 15px;
+	height: 100%;
+	align-items: center;
+
+	.page {
+		position: relative;
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 0 20px;
+		font-weight: 600;
+
+		.downArrow {
+			width: 18px;
+			height: 18px;
+			fill: white;
+			margin-left: 5px;
+			margin-top: 3px;
+		}
+
+		&.selected, &:hover, &.showDropdown {
+			background: $lt-purple;
+		}
+
+		.dropdownPanel {
+			position: absolute;
+			z-index: 1001;
+			top: 50px;
+			left: 0px;
+			padding: 10px;
+			width: 200px;
+			height: 130px;
+			background: white;
+			color: black;
+			border: 1px solid #CCCCCC;
+
+			p {
+				padding-bottom: 10px;
+			}
+		}
+	}
+
+	.page:last-child {margin-right: 0}
+
+	> * {
+		cursor: default;
+	}
+}

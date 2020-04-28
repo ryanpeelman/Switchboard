@@ -1,0 +1,97 @@
+
+.AdminView {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 90vh;
+    padding: 20px;
+    
+    .MissionControlComponent {
+        grid-column: 1/-1;
+        display: flex;
+        flex-direction: column;
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            .section {
+                display: flex;
+                flex-direction: column;
+                background: #FFFFFF;
+                border-radius: 6px;
+                border: 0.5px solid #D9D9D9;
+                margin: 20px;
+
+                .subsection {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    > div {
+                        margin: 10px 0 10px 10px;
+                    }
+                }
+
+                .sectionTitle, .subsectionTitle {
+                    font-weight: bold;
+                }
+
+                > div {
+                    margin: 10px 0 10px 10px;
+                }
+            }
+        }
+
+        .patientRowsContainer {
+            display: flex;
+            flex-direction: column;
+            cursor: default;
+            margin: 10px;
+
+            .patientRow {
+                display: flex;
+                align-items: center;
+                padding: 10px;                
+                width: 95%;
+                justify-content: flex-start;
+
+                >div {
+                    margin: auto 10px;
+                }
+
+                .patientPic {
+                    height: 65px;
+                    border-radius: 33px;
+                    overflow: hidden;
+                }
+
+                &.selected {
+                    border: 2px solid $lt-blue;
+                    border-radius: 16px;
+                    background: $lt-grey;
+                }
+            }
+        }
+	}
+	
+	> * {
+		display: flex;
+		background: #FFFFFF;
+		border-radius: 6px;
+		border: 0.5px solid #D9D9D9;
+	}
+
+	> div {
+		padding: 15px;
+		> .title {
+			font-weight: 600;
+			text-align: left;
+			margin: 0;
+			font-size: 1.25em;
+			color: black;
+
+			> * {
+				cursor: default;
+			}
+		}
+	}
+}

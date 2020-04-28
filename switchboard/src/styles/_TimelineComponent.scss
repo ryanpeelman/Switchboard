@@ -1,0 +1,305 @@
+.TimelineComponent {
+	display:block;
+	min-height: 200px;
+
+	.title {
+		display: flex;
+		justify-content: space-between;
+
+		.titleText {
+			flex: 1;
+			display: flex;
+			align-items: center;
+		}
+
+		.filter {
+			flex: 1;
+			display: flex;
+			justify-content: flex-end;
+			.filterButton {
+				border: 1.5px solid $lt-grey;
+				border-radius: 4px;
+				padding: 1px 7px 1px;
+				color: #297dfd;
+				display: flex;
+				align-items: center;
+				@include timelineShadow;
+				.filterImg {
+					width: 21px;
+					height: 21px;
+					align-self: center;
+				}
+				.filterText {
+					margin-top: 3px;
+				}
+			}
+		}
+
+		.TimelineViewToggle {
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			> div {@include timelineShadow}
+			.viewButton {
+				background: #f8f9fb;
+				border: 1.5px solid $lt-grey;
+				padding: 4px 7px 4px;
+				display: inline-block;
+				font-weight: 600;
+				color: $lt-blue;
+				font-size: 16px;
+				width: 90px;
+				height: 30px;
+				
+				&:first-child {
+					border-right: none;
+					border-radius: 4px 0 0 4px;
+				}
+				&:nth-of-type(2) {
+					border-radius: 0 4px 4px 0;
+				}
+				&:focus {outline: 0;}
+			}
+
+			.viewButton.selected {
+				background: #fff;
+				color: black;
+				&:focus {outline: 0;}
+			}
+		}
+	}
+
+	.List {
+		display: flex;
+		justify-content: center;
+		
+		.container {
+			display: grid;
+			margin: 30px;
+			grid-gap: 10px;
+			width: 75%;
+
+			.row {
+				display: grid;
+				grid-template-columns: 50px 2fr 1.5fr 1.5fr 1.5fr;
+				align-items: center;
+
+			}
+
+			.header {
+				font-weight: 600;
+				font-size: 1.1em;
+				background: $lt-grey;
+				padding: 10px;
+			}
+		}
+	}
+
+	.List, .TimelineEventItem {
+		.iconContainer {
+			background: #55C200;
+			border-radius: 17px;
+			display: flex;
+			width: 20px;
+			height: 24px;
+			align-items: center;
+			justify-content: center;
+			padding-left: 9px;
+			padding-top: 6px;
+
+			.icon {
+				fill: white;
+				width: 28px;
+			}
+
+			&.blue {
+				background: $lt-blue;
+				border: 1.5px solid $lt-blue; 
+			}
+
+			&.green {
+				background: #55C200;
+				border: 1.5px solid #55C200;
+			}
+
+			&.grey {
+				background: white;
+				border: 1.5px solid $ltmd-grey;
+
+				.icon {
+					fill: $ltmd-grey;
+				}
+			}
+
+			&.orange {
+				background: $dk-orange;
+				border: 1.5px solid $dk-orange; 
+			}
+		}
+	}
+
+	.Timeline {
+		margin-bottom: 15px;
+		height:100px;
+		position: relative;
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+
+			.TimelineEventItem {
+				display: inline-block;
+				position: relative;
+				width: 20%;		//hard-code to display five elements for now
+				height: 50px;
+
+				.iconContainer {
+					position: absolute;
+					z-index: 1001;
+					left: 50%;
+					margin-left: -12px;
+				}
+
+				&:nth-child(odd) {
+					padding-bottom: 11px;
+					.iconContainer {
+						top: 42px;
+					}
+					&:before {
+						content: "";
+						height: 3px;
+						background-color: $ltmd-grey;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 50%;
+						z-index: 100;
+					}
+					&:after {
+						content: "";
+						height: 3px;
+						background-color: $ltmd-grey;
+						position: absolute;
+						right: -13px;
+						bottom: 0px;
+						width: 50%;
+						z-index: 100;
+					}
+				}
+
+				&:nth-child(even) {
+					top: 92px;
+					padding-top: 30px;
+					.iconContainer {
+						top: -20px;
+					}
+					&:before {
+						content: "";
+						height: 3px;
+						background-color: lightgray;
+						position: absolute;
+						left: 0;
+						top: -4px;
+						width: 50%;
+						z-index: 100;
+					}
+					&:after {
+						content: "";
+						height: 3px;
+						background-color: lightgray;
+						position: absolute;
+						right: -13px;
+						top: -4px;
+						width: 50%;
+						z-index: 100;
+					}
+				}
+				&.active {
+					&:before, &:after {background-color: #55C200;}
+				}
+
+				&:nth-child(3) { //hard-code this for now, should be computed as the last completed item
+					&:before {
+						content: "";
+						height: 3px;
+						background-color: #55C200;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 50%;
+						z-index: 100;
+					}
+					&:after {
+						content: "";
+						height: 3px;
+						background-color: lightgray;
+						position: absolute;
+						right: -13px;
+						bottom: 0px;
+						width: 50%;
+						z-index: 100;
+					}
+				}
+
+				.eventText {
+					white-space: nowrap;
+    				text-overflow: ellipsis;
+					.firstLine {
+						display: flex;
+						justify-content: center;
+						span {
+							font-size: 1.15em;
+							&:first-child {
+								font-weight: 600;
+							}
+						}
+						.downIconDiv {
+							width: 18px;
+							height: 18px;
+							fill: #297dfd;
+							margin-left: 10px;
+							margin-top: -1px;
+						}
+					}
+				}
+				&:last-child:after {right: 0}
+			}
+		}
+
+		button {
+			position: absolute;
+			width: 32px;
+			height: 32px;
+			z-index: 100;
+			border: 1.5px solid $ltmd-grey;
+			border-radius: 50%;
+			overflow: hidden;
+			background: #FAFAFA;
+			fill: $lt-blue;
+			z-index: 1001;
+			&:focus {outline:none};
+			svg {
+				width: 28px;
+				height: 28px;
+			}
+			&.leftArrow {
+				left: 0px;
+				top: 72px;
+				svg {
+					margin-top: 0;
+					margin-left: 4px;
+				}
+			}
+			&.rightArrow {
+				right: 0;
+				top: 72px;
+				svg {
+					margin-top: 0x;
+					margin-left: 6px;
+				}
+			}
+		}
+	}
+}

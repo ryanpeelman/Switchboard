@@ -1,0 +1,148 @@
+
+  
+.SFTabStripComponent {
+    .top {
+        display: flex;
+        flex-direction: row;
+        height: 45px;
+        background: white;
+        color: black;
+        border-top: 1.5px solid $border-color;
+        border-bottom: 3px solid $lt-blue;
+
+        .header {
+            @include tabstripHeader;
+            width: 15%;
+            font-size: 1.75em;
+			font-weight: 600;
+            > div {width: 45px; margin: 0 7px 0 20px}
+            svg {
+                height: 45px;
+                width: 45px;
+                margin-top: 5px;
+                path {fill: $dk-grey}
+            }
+        }
+
+        .tabs {
+            display: flex;
+            align-items: center;
+            .tab:first-child {            
+                border-left: 1.5px solid $border-color;
+            }
+            .tab {
+                @include tabstripHeader;	
+                border-right: 1.5px solid $border-color;
+                width: 175px;
+                height: 44px;
+                > img {margin: 0 10px 0 25px;}
+                &.active {
+                    border-top: 5px solid  $lt-blue;
+                    height: 40px;
+                    border-bottom: 5px solid white;
+                    margin: 1px 0 0 -1px;
+
+                    &.patient {
+                        border-top: 4px solid  $lt-blue;
+                        height: 35px;
+                        margin: 1px 0 1px -1px;
+                    }
+                }		
+                .bLink {
+                    display: flex;
+					align-items: center;
+                    width: 25px;
+                    margin-left: auto;
+					> div {
+						margin-top: 2px;
+						 path {fill: $icons}
+					}	
+                }
+
+                .close, .downArrow {
+                    width: 18px;
+                    height: 18px;
+                    display: inline-block;
+                    path {fill: $dk-grey}
+                }
+
+                .downArrow.menu {
+                    width: 18px;
+                    height: 18px;
+                    display: inline-block;
+                    path {fill: $dk-grey}
+                }
+
+                .icon {
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    margin: 3px 0 0 10px;
+                    path {fill: $dk-grey}
+                }
+				&:first-child {
+					.bLink {
+						height: 99%;
+						width: 40px;
+						border-left: 1.5px solid $border-color;
+						> div {
+							margin: 2px auto 0;
+							 path {fill: $dk-grey}
+						}	
+					}
+				}
+
+            }
+        }
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: row;
+        height: 45px;
+        background: white;
+        color: black;
+
+        .pages {
+            display: flex;
+            align-items: center;
+            .page:first-child {            
+                border-left: 1.5px solid $med-grey;
+            }
+            .page {
+                @include tabstripHeader;
+                width: 200px;
+                height: 45px;                
+                margin-left: 10px;
+                > img {margin: 0 10px 0 25px;}
+                &.active {
+                    background-color: #e5f0fb;
+                    color: $lt-blue; 
+                    .title { text-decoration: underline }
+                }		
+                .bLink {
+                    display: inline-block;
+                    margin-top: 3px;
+                    width: 25px;
+                    margin-left: auto;
+                }
+
+                .close {
+                    width: 18px;
+                    height: 18px;
+                    display: inline-block;
+                    path {fill: $dk-grey}
+                }
+
+                .icon {
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    margin-left: 10px;
+                    path {fill: $dk-grey}
+                }
+
+            }
+        }
+    }
+}

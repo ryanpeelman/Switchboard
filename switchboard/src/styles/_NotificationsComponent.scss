@@ -1,0 +1,365 @@
+@import url("https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+
+.NotificationsComponent {
+	position: relative;
+	margin-top: 2px;
+	.NotificationsIcon {
+		display: flex;
+		position: relative;
+		top: 7px;
+		.notificationButton {
+			background: transparent;
+			border: none;
+			&:focus {outline: none;}
+			div {
+				margin: 0;
+				path {fill: $icons}
+			}
+			
+		}
+		.notificationIcon {
+			width: 2.5em; 
+			height: 2.5em;
+			fill: white; 
+		}
+		.notificationIconGuide {
+			width: 20px;
+			height: 20px;
+			margin: 0px 0 12px 10px;
+			path {fill: $icons}
+		}
+	
+		.countMarker {
+			width: 15px;
+			height: 13px;
+			background: red;
+			border-radius: 8px;
+			position: absolute;
+			top: 3px;
+			right: 3px;
+			text-align: center;
+			font-size: .8em;
+			padding: .05em;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			color: #fff;
+			&:hover {
+				cursor: default;
+			}
+			&.guide {
+				background: red;
+				top: -2px;
+				right: -6px;
+				color: white;
+			}
+		}
+	}
+	.NotificationsPanel {
+		background-color: white;
+		color: black;
+		position: absolute;
+		left: -275px;
+		top: 55px;
+		z-index: 1001;
+		border: 1.5px solid $border-color;
+		border-radius: 5px;
+
+		&.guide {
+			&:after, &:before {
+				bottom: 100%;
+				left: 84%;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+				z-index: 1002;
+			}
+			&:after {
+				border-color: rgba(255, 255, 255, 0);
+				border-bottom-color: #fff;
+				border-width: 11px;
+				margin-left: -11px;
+			}
+			&:before {
+				border-color: rgba(242, 242, 242, 0);
+				border-bottom-color: #f2f2f2;
+				border-width: 13px;
+				margin-left: -13px;
+			}
+		}
+
+		.title {
+			display: flex;
+			align-items: center;
+			background-color: white;
+			padding: 10px 10px 5px;
+			font-size: 1.15em;
+			justify-content: space-between;
+			color: black;
+			border-bottom: 1px solid $border-color;
+			position: relative;
+			overflow: visible;
+			border-radius: 5px 5px 0 0;
+			border-right: 1px solid $border-color;
+			p {
+				font-weight: 400;
+				text-align: left;
+				color: black;
+				display: inline
+			}
+
+			.right {
+				display: flex;
+				align-items: center;
+
+				:first-child {					
+					margin: 0 0 0 5px;
+					display: inline-block;
+					font-size: .75em;
+					text-decoration: underline;
+				}
+				> div:nth-of-type(2) {
+					svg {margin-top: 4px}
+					path {fill: $lt-blue}
+				}
+				.close {
+					width: 14px;
+					height: 14px;
+					path {fill: $dk-grey};
+					background: none;
+				}
+			}
+		}
+
+		.closeContainer {
+			position: absolute;
+			top: 8px;
+			right: 10px;
+			background: $med-grey;
+			width: 24px;
+			height: 24px;
+			border-radius: 33px;
+			display: flex;
+			justify-content: center;
+
+			.close {
+				width: 18px;
+				height: 22px;
+
+				path { fill: white; }
+			}
+		}
+
+		.notificationsFooter {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: $lt-grey;
+			padding: 5px;
+			font-size: 1.15em;
+			border: 1px solid $border-color;
+
+			.markAllNotificationItems {
+				margin-left: 5px;
+			}
+
+			.settingsIcon {
+				width: 32px;
+				height: 32px;
+			}
+		}
+	
+		.NotificationsList {
+			overflow-y: auto;
+			width: 350px;
+			max-height: 400px;
+
+			.notificationDayHeader {
+				background: $lt-grey;
+				padding: 10px;
+				font-size: 1.15em;
+				font-weight: 600;
+			}
+
+			.noNotifications {
+				text-align: center;
+				margin-top: 10px;
+				color: $dk-grey;
+				font-style: italic;
+			}
+
+			.notificationItems {
+				cursor: pointer;
+				list-style-type: none;
+				margin-bottom: 20px;
+				margin-left: 5px;
+
+				.avatar {
+					height: 36px;
+					border-radius: 33px;
+					overflow: hidden;
+					margin: 0 auto 5px;
+					display: block;
+				}
+
+				.datetime {
+					color: $med-grey;
+					margin-bottom: 10px;
+				}
+
+				.right {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-end;
+				}
+
+				> li {
+					padding: 10px;
+					line-height: 20px;
+					.notificationsItem {
+						display: grid;
+						grid-template-columns: 35px auto 70px;
+						ul {
+							list-style-type: none;
+							margin-left: 10px;
+							grid-row: 1;
+							li {
+								color: black;
+								&:first-child {font-weight: 600; color: black};
+								&:nth-child(3) {font-size: 12px; margin-top: 10px};
+							}
+						}
+						button { 
+							background: none;
+							border: none;
+							border-radius: 4px;
+							overflow: hidden;
+							width: 36px;
+							height: 36px;
+							grid-row: 1;
+							div {width: 36px; height: 36x}
+							&:focus {outline:none};
+							&.action {
+								fill: $dk-grey;
+							}
+							&.default {
+								background: red;
+								svg {
+									width: 17px;
+									height: 17px;
+									margin-top: 4px;
+								}
+							}
+							&.televisit {
+								background: $lt-blue;
+								path {fill: white};
+								svg {
+									width: 32px;
+									height: 25px;
+								}
+							}
+							&.task {
+								background: $dk-green;
+								path {fill: white};
+								svg {
+									width: 25px;
+									height: 25px;
+								}
+							}
+							.closeNotificationItem {
+								width: 15px;
+								height: 15px;
+								path {fill: $dk-grey};
+								background: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.DateTimePickerComponent {
+		position: absolute;
+		left: -245px;
+		top: 53px;
+		z-index: 1010;
+		background-color: white;
+		border: 2px solid $border-color;
+		border-radius: 10px;
+		overflow: hidden;
+		width: 260px;
+		height: 400px;
+		padding: 20px;
+
+		.scheduleMessage {
+			margin: 5px 0 15px;
+    		color: black;
+    		font-size: 16px;
+		}
+
+		.RecommendedDatesAndTimesComponent {
+			.title {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				margin: 5px;
+				color: $dk-grey;
+
+				> div {
+					display: inline-block;
+					margin-left: auto;
+					height: 25px;
+					width: 25px;
+					border: 1px solid $border-color;
+					display: inline-block;
+					margin-left: auto;
+					border-radius: 4px;
+
+					.calendar {
+						height: 25px;
+						fill: $lt-blue;
+						 margin-top: 0px;
+						margin-left: 4px;		
+					}
+				}
+			}
+
+			.day {
+				display: flex;
+    			flex-direction: column;
+				align-items: center;
+				font-weight: bold;
+				color: black;
+				margin-bottom: 20px;
+
+				.day {
+					text-align: left;
+					width: 150px;
+					padding: 0 10px;
+				}
+
+				.timeslots {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+
+					.timeslot {
+						@extend .bLink;
+						
+						border: 1px solid $border-color;
+						width: 150px;
+						padding: 10px;
+						text-align: center;
+						margin: 5px 0;
+					}
+				}
+			}
+
+		}
+	}
+}

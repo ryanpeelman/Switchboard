@@ -1,0 +1,146 @@
+
+.ScheduleComponent {
+    display: flex;
+    flex-direction: column;
+		.react-tabs__tab {
+			@include tabTitles;
+		&--selected {
+			@include selectedTab;							
+		}
+	}
+	.title {
+		display: flex;
+		align-items: center;
+		margin-top: -5px;
+		> div {
+			display: inline-block;
+			margin-left: auto;
+			height: 25px;
+			width: 25px;
+			border: 1px solid $border-color;
+			display: inline-block;
+			margin-left: auto;
+			border-radius: 4px;
+			.calendar {
+				height: 25px;
+				fill: $lt-blue;
+				 margin-top: 0px;
+				margin-left: 4px;		
+			}
+		}
+		p {display: inline}
+	}
+	.today {
+		border-bottom: 2px solid $border-color;
+		margin-top: 5px;
+		padding-bottom: 10px;
+
+		.date { 
+			font-size: 1.15em;
+			font-weight: 600;
+		}
+
+		.day {
+			margin-left: 15px;
+		}
+	}
+}
+.scheduleItems {    
+    list-style-type: none;
+    padding: 0;
+	margin-top: 15px;
+	> li {
+		padding: 10px;
+		border-top: 1px solid $border-color;	
+		line-height: 18px;
+		&:last-child {border-bottom: 1px solid $border-color;}
+		.scheduleItem {
+			display: flex;
+			flex-direction: row;
+			margin: 0 auto;
+			& > ul {    
+				list-style-type: none;
+				margin-top: 6px;
+				li {
+					color: $med-grey;
+					&:first-child {font-weight: 600; color: $lt-black}
+				}
+			}
+			& >	button {
+				@include squareBtn;
+				margin-left: auto;
+				background: $ltmd-grey;
+				text-align: center;
+				border-radius: 12px;
+				padding-top: 0px;
+				.video {
+					fill: white;
+					width: 25px;
+					margin: -1px 0 0 4px;
+					padding-top: 1px;
+				}
+				&.active {
+					@extend .video;
+					background: $lt-blue;
+					@include btnShadow;
+				}
+			}
+			
+			& >	button:focus {
+				outline:0;
+			}
+		}
+	}
+}
+
+.scheduleHeader {
+	display: flex;
+	margin-top: 10px; 
+	justify-content: space-between;
+
+	.viewButton {
+		background: #fff;
+		border: 1px solid $border-color;
+		padding: 4px 7px 2px;
+		display: inline-block;
+		font-weight: 600;
+		color: $lt-blue;
+		width: 65px;
+		height: 25px;
+		border-radius: 0 2px 2px 0;
+		&:first-child {
+			border-right: none;
+			border-radius: 2px 0 0 2px;
+		}
+	}
+
+	.viewButton.selected {
+		background: $lt-grey;
+		color: $lt-black;
+	}
+
+	.scheduleDay {
+		background: #fff;
+		border: 1px solid $border-color;
+		padding: 4px 15px 2px;
+		margin: 0 3px;
+		border-radius: 4px;
+		display: inline-block;
+		font-weight: 600;
+		color: $lt-black;
+		height: 25px;
+	}
+
+	.dateShift {
+		background: #fff;
+		border: 1px solid $border-color;
+		border-radius: 4px;
+		overflow: hidden;
+		padding: 2px 0 0 4px;
+		height: 25px;
+		width: 25px;
+		&:nth-of-type(1) {margin-left: auto;}
+		&:nth-of-type(3) {padding-left: 5px}
+		.directional {height: 20px; fill: black;}
+	}
+}

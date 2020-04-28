@@ -1,0 +1,54 @@
+
+.TelevisitSidebar {	
+	background: #FFFFFF;
+	border: 0.5px solid #D9D9D9;
+    height: 90%;
+    position: fixed;
+    top: 50px;
+	width: 0;
+	padding: 0;
+
+	.TelevisitComponent {
+		width: 100%;		
+	
+		> .title {
+			font-weight: 600;
+			text-align: left;
+			margin: 0;
+			font-size: 1.25em;
+			color: black;
+			align-items: baseline;
+
+			> * {
+				cursor: default;
+			}
+		}
+	}
+	
+	.TelevisitPopOutTab {
+		position: absolute;
+		width: 30px;
+		top: 35px;
+		left: 100%;
+		z-index: 999;
+		height: 30px;
+	}
+
+	&.TelevisitSidebarExpanded {
+		width: 35%;
+		padding: 15px;
+		
+		.TelevisitPopOutTab {
+			padding: 0;
+		}
+    }    
+
+	&.TelevisitFullScreen {
+		width: 96%;
+		padding: 15px;
+		
+		.TelevisitPopOutTab {
+			padding: 0;
+		}
+	}
+}

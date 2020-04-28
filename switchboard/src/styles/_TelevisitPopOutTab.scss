@@ -1,0 +1,20 @@
+
+.TelevisitPopOutTab {	
+    z-index: 999;
+    border-radius: 0 30px 30px 0;
+    background-color: $lt-blue;
+	
+	& >	button {
+		@include squareBtn;
+		background: transparent;
+		.arrow, .video {
+			fill: white;
+			width: 28px;
+			margin-left: 4px;
+		}
+	}
+	
+	& >	button:focus {
+		outline:0;
+	}
+}

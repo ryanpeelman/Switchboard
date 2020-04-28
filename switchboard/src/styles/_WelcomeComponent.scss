@@ -1,0 +1,30 @@
+
+.WelcomeComponent {
+  margin: auto 0;
+	text-align: right;
+    width: 32%;
+    margin-right: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+	font-weight: 600;
+	.avatar {
+		border-radius: 17px;
+		display: inline-block;
+		margin-left: 10px;
+		width: 32px;
+		border: 1px solid $offWhite;
+	}
+	.bLink {
+		display: inline-block;
+		margin: 5px 0 0 7px;
+		
+	}
+	.downArrow {
+		width: 25px;
+		height: 25px;
+		fill: white;
+		display: inline-block;
+	}
+}
+

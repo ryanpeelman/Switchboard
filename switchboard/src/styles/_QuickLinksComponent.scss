@@ -1,0 +1,24 @@
+
+.QuickLinksComponent {
+	display: flex;
+	flex-direction: column;	
+
+	.icon {
+		width: 32px;
+		height: 32px;
+		margin: 5px 0 0 10px;
+		display: inline-block;
+		path {fill: $dk-grey}
+	}
+
+	.quicklink {
+		display: flex;
+		flex-direction: row;
+		margin: 10px 0;
+
+		.quicklinkText {
+			align-self: center;
+		}
+	}
+}
+ 

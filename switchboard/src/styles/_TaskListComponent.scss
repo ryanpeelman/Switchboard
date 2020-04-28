@@ -1,0 +1,126 @@
+.TaskListComponent {
+	display: flex;
+	flex-direction: column; 
+	.react-tabs__tab {
+		@include tabTitles;
+		&--selected {
+			@include selectedTab;							
+		}
+	}
+  	.ReactTable {
+		border: none; 
+		.icon {
+			width: 32px;
+			height: 32px;
+			display: inline-block;
+		}
+		.rt-thead > .rt-tr, .rt-tbody .rt-tr {
+			display: grid;
+			align-items: center;
+			text-align: left;
+			overflow: hidden;
+			color: $lt-black;
+			font-weight: 600;
+			min-height: 36px;
+			.rt-td {
+				width: auto!important; 
+				white-space: normal;
+			}
+		}
+		.rt-tbody {
+			min-height: 300px;
+			.rt-tr-group {
+				display: inline-block;
+				flex: 0;
+			}
+		}
+		.rt-td:first-child, .rt-th:first-child {padding-left: 10px}
+		.rt-td:last-child {padding: 0}
+		.rt-td > div.warning {
+			color: $lt-orange;
+			font-weight: 600; 
+		}
+		.rt-td > div.warning svg {fill: $lt-orange; }
+		.rt-td > div.alert {
+			color: red;
+			font-weight: 600; 
+		}
+		.rt-td > div.alert svg {fill: red; }
+		.rt-thead.-header {
+			box-shadow: none;
+			background: $lt-grey;
+			font-weight: 600;
+		}
+		.rt-thead .rt-th,.rt-tbody .rt-td {
+			border: none;
+			box-shadow: none;
+		//	&:first-child {width: 55% !important; }
+		}
+	}
+	.ReactTable.Patient {
+		.rt-thead > .rt-tr, .rt-tbody .rt-tr {
+			grid-template-columns: 75% 25%;
+			font-size: 1.15em;
+		}
+
+		.rt-tbody .rt-tr-group {
+			border-bottom: none;
+			padding: 5px 0;
+		}
+	}
+	
+	.ReactTable.PatientGuide {
+		.rt-thead.-header {
+			text-transform: uppercase;
+		}
+
+		.rt-thead > .rt-tr, .rt-tbody .rt-tr {
+			grid-template-columns: 43% 15% 21% 15% 6%;
+		}
+		
+		.rt-tbody .rt-tr-group {
+    		justify-content: center;
+		}
+	}
+
+	.TaskListCategoryStripComponent {
+		background: $lt-grey;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-column-gap: 1px;
+		margin: 10px 0;
+
+		.categoryItem {	
+			padding: 10px 25px;
+			color: $dk-grey;;
+			display: flex;
+			flex-direction: column;				
+			text-align: center;
+			
+			.count {
+				font-size: 2.5em;
+				width: 40px;
+				height: 37px;
+				margin-bottom: 5px;
+				align-self: center;
+				padding-top: 3px;
+				&.clickable {
+					color: $lt-blue;
+				}
+			}
+			.name {
+				color: $lt-black; 
+				font-weight: 600;
+			}
+
+			&.selected {
+				background: $lt-blue;
+				.name {color: white;}				
+				.count {
+					border-radius: 20px;
+					background: $lt-grey;
+				}
+			}
+		}
+	}
+}

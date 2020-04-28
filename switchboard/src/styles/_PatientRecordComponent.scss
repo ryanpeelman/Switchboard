@@ -1,0 +1,25 @@
+
+.PatientRecordComponent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 15px;
+    position: relative;
+    
+    .goBack {
+        grid-column: 6 / -1;
+        grid-row: 1;
+        z-index: 100;
+        width: 25px;
+        height: 25px;
+        background: $lt-blue;
+        border-radius: 4px;
+        margin: 10px 15px 0 0;
+        justify-self: flex-end;
+        .arrowLeft {
+            fill: white;
+            width: 25px;
+            margin-left:  4px;
+        }
+        &:hover {background-color: darken($lt-blue, 10%) }
+    }
+}

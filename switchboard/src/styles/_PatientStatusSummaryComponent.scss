@@ -1,0 +1,20 @@
+
+.PatientStatusSummaryComponent {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	.recharts-legend-wrapper {
+		> ul {list-style-type: none;
+			li{line-height: 1.75em;}
+		}
+	}
+
+	.react-tabs__tab {
+		@include tabTitles;
+		&--selected {
+			@include selectedTab;
+		}
+	}
+}
+

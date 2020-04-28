@@ -1,0 +1,5 @@
+{
+  "react-native-tools.logLevel": "Trace", 
+  "react-native.android.runArguments.simulator": ["--deviceId", "emulator-5554"], 
+  "react-native.packager.port": 8088   
+}

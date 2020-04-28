@@ -1,0 +1,135 @@
+
+.LoginPage {
+	padding: 4% 0 0;
+	height: 57vh;
+	background: white;
+	hr {display:none;}
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 120px;
+}
+
+.App-header {
+	height: 170px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: normal; 
+	width: 100%;
+	position: relative;
+	.bannerImage {
+		background: url('assets/login-banner.jpg') no-repeat center center;
+		background-size: 100%;
+		opacity: .1;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.App-title {
+		font-size: 4em;
+		margin-top: 0;
+		font-weight: 300;
+		z-index: 100;
+		span {
+			font-size: .4em;
+			font-weight: normal;
+			position: relative;
+			top: -1em;
+		}
+	}
+}
+
+.loginPage {
+	background: linear-gradient(to bottom right, #250056 0%, #0076ae 100%);
+	height: 100vh;
+}
+
+.App-header + .container {
+	height: 100vh;
+	  
+}
+
+.footer {
+	width: 100%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	padding-top: 15px;
+
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.quickLoginContainer {
+	display: flex; 
+	flex-direction: row;
+	margin-top: 20px;
+	justify-content: space-between;
+}
+
+/*** FORM ***/
+
+.form {
+	color: $lt-black;
+	width: 400px;
+	margin: 0 auto;
+	padding: 15px;
+	text-align: left;
+	margin-top: 5px;
+	text-align: center;
+	h2 {text-align: center; margin-bottom: 15px;}
+	label {
+		display: block;
+		text-align: left;
+		
+	}
+	.formItems {width: 55%; margin: 0 auto}
+	input {
+		padding: 10px 5px;
+		margin-bottom: 15px;
+		width: 95%;
+		color: $lt-black;
+		font-family: "Proxima Nova", sans-serif;
+		border: 1px solid $ltmd-grey;
+		margin-top: 5px;
+		font-weight: 600;
+	}
+
+	button {
+		font-family: "Proxima Nova", sans-serif;
+		width: 55%;
+		border: 0;
+		letter-spacing: 0;
+		line-height: 18px;
+		padding: 8px 16px 10px;
+		color: #fff;
+		font-size: 14px;
+		background-color: $lt-blue;
+		border-radius: 4px;
+		margin-top: 15px;
+		cursor: pointer;
+	}
+	
+	button:hover,button:active,button:focus {
+		background-color: $dk-blue3;
+	}
+	.message {
+		margin: 15px 0 0;
+		color: $med-grey;
+		
+		opacity: .8;
+		text-align: center;
+	}
+	.message .bLink {
+		color: white;
+		text-decoration: none;
+		opacity: .8;
+	}
+}

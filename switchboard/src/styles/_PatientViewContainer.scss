@@ -1,0 +1,45 @@
+
+.PatientViewContainer {
+	display: grid;
+	grid-template-rows: 50px auto;
+	grid-template-columns: 1fr;
+
+	.NavigationComponent {
+        grid-column: 1/-1;
+		grid-row: 1;
+	}
+
+	.HomePage {
+        grid-row: 2;
+        grid-column: 1/-1;
+	}
+
+	.TelevisitSidebarPlaceholder {
+        grid-row: 2;
+        grid-column: -1;
+    }
+
+	&.TelevisitSidebarExpanded {
+		grid-template-columns: 35% 65%;		
+
+		.HomePage {
+			grid-column: 2;
+		}
+
+		.TelevisitSidebarPlaceholder {
+			grid-column: 1;
+		}
+    }    
+
+	&.TelevisitFullScreen {
+        grid-template-columns: 1fr;
+
+		.HomePage {
+			grid-column: -1;
+		}
+
+		.TelevisitSidebarPlaceholder {
+			grid-column: 1;
+		}
+	}
+}

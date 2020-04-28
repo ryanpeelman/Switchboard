@@ -1,0 +1,19 @@
+
+.PatientInformationComponent {
+    padding: 0 10px; 
+    display: block;
+    position: relative;
+    > span {font-weight: 600;}
+    .react-tabs__tab-list {margin-bottom: 15px}
+    .react-tabs__tab {
+            @include tabTitles;
+        &--selected {
+            @include selectedTab;							
+        }
+    }
+    .chartsContainer .recharts-wrapper,
+	.chartContainer .recharts-wrapper	{
+        margin: 25px 10%;
+        padding: 10px 0;
+    }
+}

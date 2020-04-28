@@ -1,0 +1,267 @@
+
+.VideoComponent {
+	min-width: 360px;
+
+	&.guide {height: 100%;}
+	.TelevisitTabContainerComponent {
+		height: 100%;
+		.react-tabs {
+			height: 100%;
+			.react-tabs__tab-panel--selected {
+				height: calc(100% - 65px);
+				max-height: 68vh;
+				.PatientSummaryComponent {
+					height: 100%;
+					overflow-y: auto;
+					overflow-x: visible;
+					max-width: 600px;
+				}
+				.CallDetailsComponent {
+					height: 100%;
+					overflow-y: auto;
+				}
+			}
+		}
+	}
+
+    .TelevisitTabContainerComponent {
+        &.hidden {visibility: hidden;}
+		text-align:left;
+		label {font-weight: 600; margin-right: 5px; color: black;}
+
+    }
+
+
+	.CallChecklistComponent, .ParticipantListComponent {
+		.header {
+			display: flex;
+			font-weight: 600;
+
+			.downArrow, .rightArrow {
+				width: 25px;
+				height: 25px;
+				display: inline-block;
+				fill: #297dfd;
+				margin-top: 0px;
+			}
+			.headerText {
+				margin-top: 4px;
+				font-size: 1.15em;
+				color: #297dfd;
+			}
+		}
+	}
+
+	.CallChecklistComponent {
+		&.guide {margin-top: 0px;}
+
+		.main {
+			font-size: 1em;
+			margin-left: 5px;
+
+			ol {
+				margin: 0 0 10px 18px;
+				color: $lt-black;
+				.task {
+					font-weight: 600;
+					font-size: 1.5em;
+					position: relative;
+					margin-bottom: 20px;
+					> div {
+						font-size: .75em;
+						position: absolute;
+						top: 0;
+						color: $lt-black;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+	}
+
+	.ParticipantListComponent {
+		margin-top: 5px;
+		.main {margin-left: 25px}
+		.participant {
+			display: grid;
+			grid-template-columns: 45px auto;
+			grid-template-rows: 60px;
+			align-items: center;
+			.patientID-pic div{
+				@include btnShadow;
+				border-radius: 17px;
+				overflow: hidden;
+				height: 35px;
+				width: 35px;
+			}
+			.patientID-details {
+				.displayName {
+					font-weight: 600;
+					color: black;
+				}
+				.role {color: $dk-grey; margin-top: 5px}
+			}
+		}
+	}
+
+    .videoSessionHeader .sessionActions {
+		margin: 20px;
+		text-align: center;
+	}
+
+    .videoSession {
+        position: relative;
+        &.hidden {visibility: hidden;}
+
+        .OTPublisherContainer {
+            position: absolute;
+            z-index: 100;
+            &.showPip {border: 2px solid white;}
+        }
+
+        .OTSubscriberContainer {
+            position: absolute;
+            z-index: 10;
+		}
+
+		.closeSessionContainer {
+			height: 100%;
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column;
+
+			.iconContainer {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				z-index: 100;
+
+				> div {
+					border-radius: 17px;
+					display: inline-block;
+					width: 32px;
+					height: 32px;
+					margin: 0 20px 0px 20px;
+					z-index: 100;
+					position: relative;
+
+					&.off {
+						background: $dk-grey;
+						&:after {
+							content:"";
+							position: absolute;
+							border-top: 2px solid white;
+							width: 32px;
+							transform: rotate(45deg);
+							transform-origin: 0% 0%;
+							left: 6px;
+							top: 3px;
+							}
+					}
+					.chatIcons {
+						fill: white;
+						width: 32px;
+						height: 32px;
+						border-radius: 16px;
+					}
+					
+					.mic {
+						@extend .chatIcons;
+						position: absolute;
+						right: -5px;
+					}
+
+					.phone {
+						@extend .chatIcons;
+
+					}
+				}
+				.iconMic{background: $lt-blue;}
+				.iconPhone {background: red;}
+			}
+		}
+    }
+
+    .closeActions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+	.sessionAction .bLink {font-weight: 600;}
+	
+	&.fullScreen {
+		.videoSessionMain {
+			display: grid;
+			grid-template-columns: 180px auto;
+
+			.sideComponents {
+				grid-row: 1;
+				grid-column:1;
+			}
+			.VideoSessionComponent {
+				grid-row: 1;
+				grid-column: 2;
+			}
+		}
+	}
+}
+
+.videoSessionMain {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.TelevisitSidebarExpanded:not(.TelevisitFullScreen) .sideComponents{
+	flex-grow: 1;
+	overflow: hidden;
+	overflow-y: auto;
+	margin: 15px 0 25px;
+}
+
+.StartSessionComponent {
+	.startVideo {
+		display: flex;
+		background: $lt-blue;
+		color: white;
+		width: 150px;
+		border-radius: 8px;
+		justify-content: center;
+		align-items: center;
+		padding: 5px 10px;
+		font-size: 18px;
+		margin: 0 auto;
+
+		.video {
+			width: 42px;
+			fill: white;
+		}
+	}
+}
+
+.televisitNotStartedConatiner {
+	cursor: default;
+
+	.pipPlaceholderContainer {
+		display: flex;
+		justify-content: space-between;
+
+		.pipPlaceholder {
+			width: 170px;
+			height: 170px;
+			border: 2px solid $ltmd-grey;
+			border-radius: 4px;
+			margin: 0 10px;
+		}
+	}
+
+	.message {
+		display: flex;
+		font-size: 24px;
+		font-weight: bold;
+		margin: 50px auto;
+		justify-content: center;
+	}
+}

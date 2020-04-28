@@ -1,0 +1,129 @@
+
+.HeartRateBadge {
+    position: absolute;
+	top: -10px;
+    right: -65px;
+    display: flex;
+    justify-items: center;
+    width: 140px;
+    height: 50px;
+	grid-template-columns: 1fr 1fr;		
+  }
+  
+
+  
+.heart {
+  position: relative;
+  width: 55px;
+  height: 45px;
+  grid-row: 1;
+  grid-column: 1;
+}
+  
+.date {
+  font-size: 14px;
+  z-index: 1000;
+  grid-row: 1;
+  grid-column: 1;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 4px;
+}
+  
+.heart.heartbeat {
+  animation: .3s infinite beatHeart;
+}
+
+.heart.heartbeat {
+  animation-name: beatHeart;
+  animation-duration: .9s;
+  animation-iteration-count: 3;
+}
+  
+@mixin heartShapeBA {
+position: absolute;
+  content: "";
+  left: 24px;
+  top: 0;
+  width: 25px;
+  height: 42px;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+      -moz-transform-origin: 0 100%;
+      -ms-transform-origin: 0 100%;
+        -o-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+ 
+@mixin heartShapeA {
+    left: 0;
+  -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+      -moz-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+        -o-transform-origin: 100% 100%;
+          transform-origin :100% 100%;
+
+}
+  
+.heart {
+  &:before, 
+  &:after {
+    @include heartShapeBA;
+    background: $med-grey;
+  }	  
+  &:after {@include heartShapeA;}	
+  .heartrate {display: none;}
+}
+
+.heart.heartbeat {
+  &:before, 
+  &:after {
+    @include heartShapeBA;
+    background: blue;
+  }	  
+  &:after {@include heartShapeA;}
+    .heartrate {
+    display: block;
+    color: white;
+    font-size: 19px;
+    z-index: 1000;
+    text-align: center;
+    font-weight: 600;	
+      position: relative;
+    width: 50px;
+    height: 50px;
+    grid-row: 1;
+    grid-column: 1;	
+    top: 9px;
+  }
+} 
+  
+@keyframes beatHeart {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  

@@ -1,0 +1,285 @@
+
+.DataDashboardComponent {
+    display: flex;
+	flex-direction: column;	
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 5px 0 2px;
+		font-weight: 600;
+		color: $lt-black;
+		:first-child {
+			display: flex;
+			align-items: center;
+		}
+		
+		.downArrow, .rightArrow {
+			width: 22px;
+			height: 22px;
+			display: inline-block;
+			path {fill: $lt-black}
+			margin-top: -2px;
+		}
+
+		> div {cursor: default;}
+	}
+
+	.dataContainer {
+		width: 100%;
+		background: white;
+		.ReactTable {
+			overflow: visible;
+			.rt-thead.-header {
+				box-shadow: none;
+				background: #F8F9FB;
+				text-align: left;
+				font-weight: 600;
+			}
+			.rt-thead .rt-resizable-header {
+				text-align: left;
+				padding-left: 10px;
+			}
+			.rt-thead .rt-th, 
+			.ReactTable .rt-thead .rt-td {line-height: 23px;}
+		}
+	}
+	.recharts-tooltip-wrapper {display:block; visibility: visible}
+	.HeartRateContainerComponent {
+		.header {border-top: 1px solid $lt-grey;}
+		.chartsContainer > div > div {position: relative;}
+	}
+
+	.PillComplianceContainer {
+		color: $lt-black;
+		.container {
+			display: grid;
+			grid-template-columns: 20% auto;
+			margin: 10px 10px 30px;
+		}
+
+		.sideSummary {
+			display: flex;
+			align-items: center;
+			border-right: 1px solid $border-color;
+			text-align: center;
+
+			.text {
+				text-align: center;
+				font-size: 1.5em;
+
+				.percentage {
+					font-size: 3.25em;
+					line-height: 1;
+					text-align: center;
+				}
+			}
+		}
+
+		.pillMarkers {
+			align-items: center;
+			margin: 0 10px;
+			display: grid;
+			grid-template-columns: 35px auto 10px;
+
+			.arrow {
+				width: 45px;
+				fill: $lt-blue;
+				margin-top: 30px;
+			}
+
+			.pillGrid {
+				display: grid;
+				grid-template-columns: 50px repeat(7, 1fr);
+				font-weight: 600;
+    			
+				.pillItemEvent {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					.pillDate {
+						margin-bottom: 5px;
+						font-size: 1.15em;
+						font-weight: normal;
+						&.rowheader {
+							color: white;
+						}
+					}
+
+					.boxesContainer {
+						display: flex;
+						flex-direction: column;
+						border-right: 1px solid $border-color;
+						width: 100%;
+						align-items: center;						
+
+						&.rowheader {
+							padding: 4px 0;
+						}
+						
+						.box {
+							height: 35px;
+							width: 35px;
+							border-radius: 8px;
+							margin: 10px;
+							
+							position: relative;	
+							border: 2px solid $border-color;
+							background: white;
+							
+							display: flex;
+							justify-content: center;
+							align-items: center;
+
+							.icon {
+								width: 40px;
+								height: 40px;
+								fill: white;
+
+								path {
+									fill: white;
+								}
+							}
+
+							&.pass {
+								border: 2px solid #55C200;
+
+								.icon {
+									fill: #55C200;
+									margin-left: 13px;
+								   	margin-top: 6px;
+								}
+							}
+
+							&.fail {
+								border: 2px solid red;
+
+								.icon {
+									fill: red;
+									margin-left: 14px;
+								   	margin-top: 5px;
+								}
+							}
+
+							&.active {
+								border: 2px solid $lt-blue;
+								background: $lt-blue;
+
+								.icon {
+									fill: white;
+
+									&.check {										
+										margin-left: 13px;
+										margin-top: 6px;
+									}
+
+									&.close {										
+										margin-left: 14px;
+								   		margin-top: 5px;
+									}
+								}
+							}
+
+							&.pending {
+								border: 2px solid $lt-blue;
+
+								.icon {
+									fill: white;
+
+									&.check {										
+										margin-left: 13px;
+										margin-top: 6px;
+									}
+
+									&.close {										
+										margin-left: 14px;
+								   		margin-top: 5px;
+									}
+								}
+							}
+						}
+
+						.am {
+							@extend .box;
+						}  
+						.pm {
+							@extend .box;
+						}
+
+						.rowheader {
+							border: none; 
+							font-size: 24px;
+						}
+					}
+				}
+					
+				:first-child, :last-child {
+					.boxesContainer {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+
+	.SpirometryContainerComponent {	
+		padding-bottom: 25px;
+		.header {border-top: 1px solid $border-color;}
+		.toggleContainer {
+			display: flex;
+			justify-content: flex-end;
+			width: 600px;
+
+			.icon {
+				width: 20px;
+				height: 20px;
+				margin: 5px 0 0 10px;
+				display: inline-block;
+				path {fill: $dk-grey}
+			}
+		}
+
+		.chartContainer {
+			display: flex;
+			flex-direction: column;
+
+			> p {
+				margin-left: 15px;
+				font-weight: 600;
+			}
+
+			.recharts-legend-item svg {
+				width: 8px;
+				height: 8px;
+			}
+
+			.recharts-legend-item.legend-item-0 {fill: $lt-blue;}
+			.recharts-legend-item.legend-item-1 {fill: $lt-grey;}
+		}
+		.tooltipContainer {
+			background: white;
+			min-width: 200px;
+			min-height: 200px;
+			padding: 10px;
+			border: 1px solid $ltmd-grey;
+			> div {margin: 5px;}
+			.chartContainer {margin-top: 10px}
+			.fieldHeader {font-weight: 600; font-size: 1.25em}
+		}
+		.recharts-tooltip-wrapper {
+			width: 150px; 
+			height: 150px;
+			.fieldData {
+				display: flex;
+				justify-content: space-evenly;
+				span {font-weight: 600}
+			}
+			.recharts-wrapper {
+				padding: 0;
+				.recharts-surface {margin-left: -75px}
+			}
+		}
+
+	}
+}

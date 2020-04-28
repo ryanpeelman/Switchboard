@@ -1,0 +1,293 @@
+/* Variables */
+$border-color: #f2f2f2;
+$offWhite: #efefef;
+$lt-grey: #f2f2f2;
+$ltmd-grey: #d9d9d9;
+$med-grey: #999;
+$dk-grey: #595959;
+$lt-black: #444;
+$lt-orange: #fcb515;
+$lt-blue: #297dfd;
+$dk-green: #00AD50;
+$dk-blue: #065280;
+$dk-blue2: #377499;
+$dk-blue3: #2268d4;
+$dk-orange: #ff530d;
+$hoverColor: darken($lt-blue, 10%); 
+
+$salesforceBlueGray: #B2C4DA;
+$icons: #b5b5b5;
+$lt-purple: #4B4586;
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-light.eot");
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-light.eot?#iefix") format("embedded-opentype"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-light.woff") format("woff"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-regular.eot");
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-regular.eot?#iefix") format("embedded-opentype"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-regular.woff") 	format("woff"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-regularitalic.eot");
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-regularitalic.eot?#iefix") format("embedded-opentype"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-regularitalic.woff") format("woff"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-regularitalic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-semibold.eot");
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-semibold.eot?#iefix") format("embedded-opentype"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-semibold.woff") format("woff"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-semibold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-semibolditalic.eot");
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-semibolditalic.eot?#iefix") format("embedded-opentype"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-semibolditalic.woff") format("woff"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-semibolditalic.ttf") format("truetype");
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-bold.eot");
+	src: url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-bold.eot?#iefix") format("embedded-opentype"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-bold.woff") 		format("woff"), url("//cdn.ims.io/design/font/0.5/proxima-nova/proximanova-bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: "apollo-icons";
+	src: url("//cdn.ims.io/design/icon-font/2.0/apollo-icons.eot");
+	src: url("//cdn.ims.io/design/icon-font/2.0/apollo-icons.eot?#iefix") format("embedded-opentype"), url("//cdn.ims.io/design/icon-font/2.0/apollo-icons.woff") format("woff"), url("//cdn.ims.io/design/icon-font/2.0/apollo-icons.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Extends */
+
+@mixin selectedTab {
+	border: none;
+	border-bottom: 2px solid #297dfd;
+}
+
+@mixin tabTitles {
+	line-height: 20px;
+	text-align: center;
+	padding-bottom: 0;
+	padding: 6px 20px 3px;
+}
+
+@mixin squareBtn {
+	width: 25px;
+	height: 25px;
+	border: none;
+}
+
+@mixin tabstripHeader {
+	display: flex;
+	align-items: center;
+	color: $dk-grey;
+	font-weight: 600;
+}
+
+@mixin divShadow { 
+	box-shadow: 3px 7px 15px 2px rgba(0,0,0,0.15);
+}
+
+@mixin btnShadow {
+	box-shadow: 0 2px 5px 2px rgba(0,0,0,0.15);
+}
+
+@mixin timelineShadow {
+	box-shadow: 0 1px 0 1px rgba(0,0,0,0.015);
+}
+
+@mixin patientPic-lg {
+	border-radius: 90px;
+	overflow: hidden;
+	width: 90px;
+	height: 90px;
+}
+
+@mixin studyTeam {
+	grid-column: 1 / 10;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	span {
+		grid-column: 1 /10; 
+		text-align: center;
+		display: block;
+		margin-bottom: 10px;
+		font-weight: bold;
+	}
+}
+
+@import '../node_modules/input-moment/dist/input-moment.css';
+@import '../node_modules/react-table/react-table.css';
+@import '../node_modules/react-tabs/style/react-tabs.css';
+
+@import 'styles/_AdminView.scss';
+@import 'styles/_ApplicationTitleComponent.scss';
+@import 'styles/_CalendarLauncherComponent.scss';
+@import 'styles/_DataDashboardComponent.scss';
+@import 'styles/_EDCComponent.scss';
+@import 'styles/_HeartRateBadge.scss';
+@import 'styles/_HomePage.scss';
+@import 'styles/_InteractComponent.scss';
+@import 'styles/_LoginPage.scss';
+@import 'styles/_NavigationComponent.scss';
+@import 'styles/_NotificationsComponent.scss';
+@import 'styles/_PageNavigatorComponent.scss';
+@import 'styles/_PatientDrilldownComponent.scss';
+@import 'styles/_PatientView.scss';
+@import 'styles/_PatientViewContainer.scss';
+@import 'styles/_PatientGuideView.scss';
+@import 'styles/_PatientInformationComponent.scss';
+@import 'styles/_PatientRecordComponent.scss';
+@import 'styles/_PatientSummaryComponent.scss';
+@import 'styles/_PatientStatusSummaryComponent.scss';
+@import 'styles/_QuickLinksComponent.scss';
+@import 'styles/_ScheduleComponent.scss';
+@import 'styles/_SFNavigationComponent.scss';
+@import 'styles/_SFTabStripComponent';
+@import 'styles/_StudyTeamComponent';
+@import 'styles/_Tabs.scss';
+@import 'styles/_TaskListComponent.scss';
+@import 'styles/_TelevisitComponent.scss';
+@import 'styles/_TelevisitPopOutTab.scss';
+@import 'styles/_TelevisitSidebar.scss';
+@import 'styles/_TimelineComponent.scss';
+@import 'styles/_VideoComponent.scss';
+@import 'styles/_WelcomeComponent.scss';
+
+html { background: #F7F8FA;}
+
+html {
+    width:100%;
+    height: 100%;
+    display: table;
+}
+
+body {
+    width:100%;
+    display:table-cell;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+
+#root, .App, .ApplicationContainer {
+	height: 100%;
+}
+
+button {font-size: 12px}
+
+.bLink {
+	text-decoration: none;
+	color: $lt-blue;
+	cursor: pointer;
+	&:hover {color: $hoverColor;}
+	display: inline-block;
+}
+.chartsContainer {
+  display: flex;
+  background: #fff;
+  margin: 15px 0 0 15px;
+  div{grid-row: row 1;}
+  .recharts-wrapper {
+	  margin: 5px;
+	  padding: 10px;
+	}
+}
+
+.PatientGuideViewContainer {
+	.react-tabs .react-tabs__tab-list .react-tabs__tab {
+		text-transform: uppercase;
+	}
+}
+
+.DataDashboardComponent {position: relative;}
+
+.PatientGuideView >, .PatientView > {
+	.DataDashboardComponent,
+	.ScheduleComponent,
+	.TimelineComponent,
+	.TaskListComponent,
+	.InteractComponent,
+	.PatientDrilldownComponent,
+	.PatientRecordComponent,
+	.PatientStatusSummaryComponent, 
+	.QuickLinksComponent,
+	.EDCComponent{
+		@include divShadow;
+	}
+}
+
+.PatientGuideView > {
+	.TelevisitComponent {
+		@include divShadow;
+	}
+}
+
+.AdminView {
+	.MissionControlComponent {
+		@include divShadow;
+	}
+}
+
+.Toastify__toast--info {
+	border-radius: 4px!important;
+	background-color: $lt-blue!important;
+}
+
+.Toastify__toast-container--top-right {
+    top: 60px!important;
+}
+
+/*** CONTAINER ***/
+.container {
+	display: grid;
+	align-content: start;
+	.info {
+		margin: 50px auto;
+		text-align: center;
+		h1 {
+		  margin: 0 0 15px;
+		  padding: 0;
+		  font-size: 36px;
+		  font-weight: 300;
+		  color: #1a1a1a;
+		}
+		span {
+			color: #4d4d4d;
+			font-size: 12px;
+			a {
+				color: #000000;
+				text-decoration: none;
+			} 
+			.fa {color: #EF3B3A;}
+		}
+	}
+}
+/*** CONTAINER ***/

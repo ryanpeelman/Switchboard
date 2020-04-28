@@ -1,0 +1,38 @@
+
+.react-tabs__tab {
+    border-color: none;
+    border-radius: none;
+	bottom: -2px;
+}
+
+.react-tabs__tab-list {
+	margin: 0 0 15px;
+	border-bottom: .5px solid $border-color;
+}
+
+.TaskListComponent, 
+.TimelineComponent,
+.ScheduleComponent,
+.TelevisitTabContainerComponent,
+.PatientRecordComponent, 
+.PatientStatusSummaryComponent {
+	.react-tabs__tab-list {
+		border-bottom: 2px solid $border-color;
+		.react-tabs__tab {
+			color: $lt-blue;
+			font-weight: 600;
+		}
+		.react-tabs__tab--selected {
+			border: none;
+			border-bottom: 2px solid $lt-blue;
+			color: #000;
+			&:focus {
+				box-shadow: none;
+				outline: 0;
+				border: none;
+				border-bottom: 2px solid $lt-blue;
+			}
+		}
+	}
+
+}

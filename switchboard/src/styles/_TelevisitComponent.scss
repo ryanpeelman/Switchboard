@@ -1,0 +1,39 @@
+
+.TelevisitComponent {
+	.sessionActions {
+		.bLink {font-weight: 600}
+	}
+
+	.title {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: baseline;
+		
+		> .bLink > div {
+			height: 25px;
+			width: 25px;
+			border: 1px solid #999999;
+			display: inline-block;
+			margin-left: auto;
+			border-radius: 4px;
+		}
+		.icon {
+			width: 20px;
+			height: 20px;
+			margin: 3px 0 0 6px;
+			display: inline-block;
+			path {fill: $lt-blue}
+
+			&.windowState {
+				path {
+					color: #999999;
+					fill: #999999;
+				}
+			}
+		}
+	}
+	.content {
+		height: calc(100% - 50px);
+	}
+}

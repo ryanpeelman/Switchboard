@@ -1,0 +1,47 @@
+
+.EDCComponent {    
+    display: flex;
+    flex-direction: column;
+    
+    .studies {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+
+        > div {
+            margin: 10px 0;
+        }
+
+        .study {
+            display: flex;
+            color: $lt-blue;
+            font-weight: 600;
+            align-items: center;
+
+            .icon {
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                margin-left: 10px;
+                path {fill: $lt-blue}
+            }
+        }
+
+        .data {
+            display: grid;
+            grid-template-columns: 10px;
+            grid-gap: 10px;
+            margin-left: 10px;
+            align-items: center;
+			color: $lt-black;
+			font-weight: 600;
+            .count {
+                grid-column: 1;
+                font-size: 1.5em;
+            }
+            .name {
+                grid-column: 2;
+            }
+        }
+    }
+}

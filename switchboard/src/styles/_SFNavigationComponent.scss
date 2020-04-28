@@ -1,0 +1,88 @@
+
+.SFNavigationComponent {
+    display: flex;
+    flex-direction: row;
+	height: 50px;
+	background: white;
+    color: $med-grey;
+    > div {flex-grow: 1;}
+    .NavLeft {
+		display: flex;
+		justify-items: flex-start;
+		align-items: center;
+		margin-left: 15px;
+		img {height: 20px}
+    }
+
+    .NavCenter {
+		input {
+			width: 100%;
+			border-radius: 4px;
+			height: 35px;
+			margin-top: 7px;
+			border: 1.5px solid $lt-grey;
+			padding-left: 40px;
+			font-weight: 600;
+			font-size: 1.25em;
+			background: url(assets/search.svg) no-repeat 5px 5px/25px 25px;
+		}
+    }
+    
+    .NavRight {
+        display: flex;
+        justify-content: flex-end;
+		align-items: center;
+		.siteSpeed {
+			background: #00c220;
+			font-size: .75em;
+			color: white;
+			border-radius: 2px;
+			padding: 2px 2px 1px;
+			margin: 8px 3px 0 0;
+		}
+
+		.siteSize {
+			@extend .siteSpeed;
+			margin: 8px 4px 0 0;
+		}
+		.dropdownMenu {
+			width: 45px;
+			height: 27px;
+			margin-top: 2px;
+			svg {width: 45px; height:27px}
+		}
+        .buttonTray {
+            display: flex;
+			align-items: center;
+			margin: 15px;
+			> div:first-child {
+				background: $icons;
+				border-radius: 4px;
+				width: 18px;
+				height: 18px;
+				margin-top: 3px;
+				.icon {
+					margin: 2px 0 0 3px;
+					width: 13px;
+					height: 13px;
+					path {fill: white}
+				}
+			}
+            .avatar {
+                border-radius: 17px;
+                display: inline-block;
+                margin-left: 15px;
+                width: 32px;
+                height: 32px;
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+				margin: 5px 0 0 10px;
+                display: inline-block;
+				path {fill: $icons}
+            }
+        }
+    }
+}
